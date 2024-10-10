@@ -131,6 +131,19 @@ FROM dual;
 
 
 
+---
+
+## ¡Gracias por seguir este tutorial!
+
+Espero que este tutorial te haya sido útil y te permita sacar el máximo provecho de las capacidades de Oracle Cloud Infrastructure en tus proyectos. Si tienes alguna duda o sugerencia, no dudes en contactarme. Estoy siempre dispuesto a apoyar en el proceso de transformación digital y adopción de tecnologías innovadoras.
+
+**[Jorge Alexander Galán Méndez](https://www.linkedin.com/in/jorge-alexander-galan-mendez/)**  
+**Ingeniero Electrónico especializado en Gerencia Empresarial**  
+**Maestría en Inteligencia Artificial**  
+
+¡Éxito en tu camino hacia la innovación tecnológica!
+
+---
 
 
 
