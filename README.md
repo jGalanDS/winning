@@ -1,4 +1,6 @@
-# Tutorial: Uso de Oracle Cloud Infrastructure (OCI) con SQL Web
+# Tutorial: Uso de Oracle Cloud Infrastructure (OCI) con servicios de IA GENERATIVA Y SELECTAI
+
+
 
 Este tutorial te guiará a través de los pasos necesarios para trabajar con perfiles y modelos en una base de datos autónoma utilizando el SQL Web de OCI. Asegúrate de seguir cada paso cuidadosamente para completar con éxito las tareas.
 
