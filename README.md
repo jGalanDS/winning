@@ -114,15 +114,6 @@ SELECT DBMS_CLOUD_AI.GENERATE(
 FROM dual;
 ```
 
-## Consulta 2: ¿Cuál es el mejor producto?
-
-```sql
-SELECT DBMS_CLOUD_AI.GENERATE(
-    prompt => '¿Cuál es el mejor producto?, responde en español',
-    profile_name => 'ociai_llama',
-    action => 'narrate')
-FROM dual;
-```
 **Descripción**: A diferencia de la anterior, esta consulta genera una instrucción SQL que puede ser utilizada para obtener el jugador con más goles, en lugar de una respuesta narrativa.
 
 ## 3.3 Consulta: Visualizar eventos en la tabla PL.EVENT
