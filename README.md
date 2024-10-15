@@ -85,28 +85,32 @@ END;
 ```
 ---
 
-# Paso 3: Generar consultas con el perfil de IA
+# Paso 3: Generar consultas con el perfil de IA en OCI Autonomous
 
-Ahora que hemos configurado el perfil, podemos utilizarlo para generar respuestas y SQL basados en lenguaje natural.
+En este numeral, aprenderemos a utilizar el paquete `DBMS_CLOUD_AI` para generar respuestas narrativas y consultas SQL automáticas utilizando la funcionalidad de SELECT AI en Oracle Cloud Infrastructure (OCI) Autonomous Database.
 
-## Consulta 1: ¿Cuántos clientes en San Francisco están casados?
+## 3.1 Consulta: Obtener el jugador con más goles (respuesta narrativa)
 Para obtener una respuesta narrativa:
 
 ```sql
 SELECT DBMS_CLOUD_AI.GENERATE(
-    prompt => '¿Cúantos clientes en San Francisco están casados?',
+    prompt => '¿cual es el jugador con mas goles?',
     profile_name => 'ociai_llama',
-    action => 'narrate') AS chat
+    action => 'narrate'
+) AS chat
 FROM dual;
 ```
+**Descripción**: Esta consulta genera una respuesta narrativa utilizando el perfil `ociai_llama` para responder a la pregunta sobre el jugador con más goles. El resultado será un texto descriptivo.
 
-Para generar la consulta SQL correspondiente:
+
+## 3.2 Consulta: Obtener el jugador con más goles (consulta SQL generada)
 
 ```sql
 SELECT DBMS_CLOUD_AI.GENERATE(
-    prompt => '¿Cúantos clientes en San Francisco están casados?',
+    prompt => '¿cual es el jugador con mas goles?',
     profile_name => 'ociai_llama',
-    action => 'showsql') AS query
+    action => 'showsql'
+) AS query
 FROM dual;
 ```
 
@@ -119,20 +123,58 @@ SELECT DBMS_CLOUD_AI.GENERATE(
     action => 'narrate')
 FROM dual;
 ```
+**Descripción**: A diferencia de la anterior, esta consulta genera una instrucción SQL que puede ser utilizada para obtener el jugador con más goles, en lugar de una respuesta narrativa.
 
-## Consulta 3: ¿Qué es Oracle Autonomous Database? 
+## 3.3 Consulta: Visualizar eventos en la tabla PL.EVENT
 
 Es posible crear texto LLM usando la interfaz de Oracle SQL.
 
 ```sql
+SELECT * FROM pl.event;
+```
+**Descripción**: Esta consulta recupera todos los registros de la tabla PL.EVENT, que contiene información sobre eventos de partidos, incluyendo goles, tipo de gol (cabeza, penalti, etc.).
+
+### 3.3.1 Consulta: Análisis de goles de cabeza y goles de penalti (respuesta narrativa)
+
+**Descripción**: Esta consulta utiliza SELECT AI para proporcionar una respuesta narrativa sobre la cantidad de goles de cabeza y de penalti registrados en la tabla PL.EVENT.
+
+```sql
 SELECT DBMS_CLOUD_AI.GENERATE(
-    prompt       => 'what is oracle autonomous database, responde en español',
+    prompt => '¿La tabla PL.EVENT contiene información sobre la cantidad de goles, donde están marcados como Y / N dependiendo de cómo se anotaron. La columna HEAD indica si el gol fue de cabeza. ¿Cuántos goles de cabeza se han realizado?,¿Cuántos goles de PENALTY se han realizado?, Responde en español',
     profile_name => 'ociai_llama',
-    action       => 'chat')
+    action => 'narrate'
+) AS chat
 FROM dual;
 ```
 
+---
 
+---
+
+
+# Reto Final: Uso de showsql para Consultas Automatizadas
+
+En esta sección final del tutorial, los participantes deberán usar la función showsql para generar y visualizar la consulta SQL que responde a una pregunta específica sobre los datos en la tabla **PL.EVENT**.
+
+## Instrucciones del Reto:
+
+**Objetivo**: Usar la función **DBMS_CLOUD_AI.GENERATE** con la acción `showsql` para que el sistema genere automáticamente una consulta SQL que obtenga la cantidad de goles de cabeza y de penalti.
+
+Consulta base a Utilizar:
+
+```sql
+SELECT DBMS_CLOUD_AI.GENERATE(
+    prompt => '¿La tabla PL.EVENT contiene información sobre la cantidad de goles, donde están marcados como Y / N dependiendo de cómo se anotaron. La columna HEAD indica si el gol fue de cabeza. ¿Cuántos goles de cabeza se han realizado?,¿Cuántos goles de PENALTY se han realizado?, Responde en español',
+    profile_name => 'ociai_llama',
+    action => 'narrate'
+) AS chat
+FROM dual;
+```
+## El resultado deber ser algo similar a:
+
+![img.png](img.png)
+
+# FIN
 
 ---
 
