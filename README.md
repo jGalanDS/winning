@@ -9,7 +9,8 @@ Este tutorial te guiará a través de los pasos necesarios para trabajar con per
 Antes de comenzar, asegúrate de tener acceso a:
 - Una **Base de Datos Autónoma** en OCI.
 - Acceso al usuario `admin` <- **_IMPORTANTE_**
-- El **SQL Web** habilitado `admin` para ejecutar consultas.
+- El **SQL Web** habilitado logueado en usuario `admin` para ejecutar consultas.
+- Regiones compatibles: `US Midwest (Chicago)`, `UK South (London)`, `Brazil East (Sao Paulo)`, `Germany Central (Frankfurt)`
 
 ---
 
