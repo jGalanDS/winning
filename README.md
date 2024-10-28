@@ -63,10 +63,10 @@ BEGIN
         '{"provider": "oci",
             "credential_name": "OCI$RESOURCE_PRINCIPAL",
             "object_list": [
-                {"owner": "SH", "name": "customers"},
-                {"owner": "SH", "name": "sales"},
-                {"owner": "SH", "name": "products"},
-                {"owner": "SH", "name": "countries"}
+                {"owner": "PL", "name": "EVENT"}
+                --{"owner": "SH", "name": "sales"},
+                --{"owner": "SH", "name": "products"},
+                --{"owner": "SH", "name": "countries"}
             ],
             "model": "meta.llama-3-70b-instruct"
             }');
